@@ -1,9 +1,9 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = ""; // default for XAMPP
-$database = "medical_records";
-$charset = 'utf8mb4';
+$servername = getenv('DB_HOST') ?: 'localhost';   // Use environment variable, fallback to localhost
+$username   = getenv('DB_USER') ?: 'root';        // Fallback for local XAMPP
+$password   = getenv('DB_PASS') ?: '';
+$database   = getenv('DB_NAME') ?: 'medical_records';
+$charset    = 'utf8mb4';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
