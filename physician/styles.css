@@ -1,0 +1,356 @@
+/* Basic Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-container {
+    width: 80%;
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Container - Circle */
+.logo-container {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+/* Logo Styling */
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+/* Physician Dashboard Title */
+h1 {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+}
+
+/* Hamburger Menu Container */
+.hamburger-menu-container {
+    width: 50px;
+    height: 50px;
+    background-color: #007BFF;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hamburger Icon Style */
+.hamburger-menu {
+    font-size: 30px;
+    color: white;
+    line-height: 50px;
+    margin: 0;
+}
+
+/* Menu Bar Styles */
+.menu-bar-container {
+    display: block ;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 250px;
+    z-index: 1000;
+}
+
+.menu-bar {
+    background-color: #007BFF;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.nav-links ul li {
+    margin: 10px 0;
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    padding: 10px 20px;
+}
+
+.nav-links ul li a:hover {
+    background-color: #0056b3;
+    border-radius: 5px;
+}
+
+/* Menu Bar Active (on click) */
+.menu-bar-container.active {
+    display: block;
+}
+
+/* Main Content Section */
+main {
+    margin-top: 20px;
+}
+
+/* Welcome Section */
+.welcome {
+    text-align: center;
+}
+
+.profile-summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.profile-summary img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+/* Quick Access Section */
+.quick-access {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.tiles {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.tile {
+    background: #007BFF;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tile a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tile:hover {
+    background-color: #0056b3;
+}
+
+/* Students Table */
+.students {
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 50%;
+    max-width: 500px;
+    max-height: 90vh; /* Limit height to prevent overflow */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+/* Close Button */
+.modal-content .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+.modal-content .close:hover {
+    color: #007BFF;
+}
+
+/* Input Fields */
+.modal-content label {
+    display: block;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 12px 0 6px;
+    color: #333;
+}
+
+.modal-content input, 
+.modal-content textarea, 
+.modal-content select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease-in-out;
+    margin-bottom: 15px;
+}
+
+.modal-content input:focus, 
+.modal-content textarea:focus, 
+.modal-content select:focus {
+    border-color: #007BFF;
+    outline: none;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+}
+
+/* Textarea */
+.modal-content textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Upload File Input */
+.modal-content input[type="file"] {
+    padding: 10px;
+}
+
+/* Submit Button */
+.modal-content button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}

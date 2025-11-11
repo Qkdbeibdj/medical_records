@@ -1,0 +1,465 @@
+/* === General Reset & Base Styles === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  user-select: none;
+}
+.activities-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* remove fixed height to prevent unnecessary scrollbar */
+    max-height: none;
+}
+
+.activities-footer .view-all-link {
+    margin: 0;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e0e5ec; /* Slightly darker background to enhance neumorphic effect */
+    color: #3e1760; /* deep purple as default */
+    overflow-x: hidden;
+    padding-top: 5px;
+}
+
+/* Apply deep purple to all text EXCEPT buttons, headers, and nav links */
+body *:not(.btn):not(header):not(header *):not(.nav-links a):not(.dropbtn) {
+    color: #3e1760 !important;
+}
+
+
+/* Certificate Requests Table */
+#certificateRequests table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-top: 10px;
+}
+
+#certificateRequests th, 
+#certificateRequests td {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+#certificateRequests th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+#certificateRequests tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+#certificateRequests tr:hover {
+    background-color: #e6f7ff;
+}
+
+#certificateRequests input[type="date"],
+#certificateRequests input[type="time"] {
+    margin: 2px 5px 2px 0;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#certificateRequests button {
+    margin: 2px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+#certificateRequests .btn-approve { background-color: #4CAF50; }
+#certificateRequests .btn-approve:hover { background-color: #45a049; }
+
+#certificateRequests .btn-reject { background-color: #f44336; }
+#certificateRequests .btn-reject:hover { background-color: #d32f2f; }
+
+#certificateRequests .status {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.dashboard-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+
+.main-header {
+  background: #dbe9f4;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+  border-radius: 18px;
+  box-shadow:
+    8px 8px 15px #a0b8d9,
+    -8px -8px 15px #f3f9ff;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  box-shadow:
+    8px 8px 15px #a0b8d9,
+    -8px -8px 15px #f3f9ff;
+}
+
+.college-info h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.college-info h3 {
+  font-size: 17px;
+  font-weight: 500;
+  color: #3a4d6b;
+}
+
+.college-info p {
+  font-size: 13px;
+  color: #4e617c;
+  margin-top: 4px;
+}
+.notify-btn {
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 6px 6px 12px #d1d1d1, -6px -6px 12px #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.notify-btn:hover {
+    background: linear-gradient(145deg, #f0f0f0, #dcdcdc);
+    box-shadow: inset 4px 4px 8px #c8c8c8, inset -4px -4px 8px #ffffff;
+}
+
+#notifyForm select,
+#notifyForm input,
+#notifyForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 5px 5px 10px #d1d1d1, inset -5px -5px 10px #ffffff;
+    background: #f0f0f0;
+    font-size: 14px;
+}
+
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 24px;
+}
+
+.nav-links a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 10px;
+}
+
+.nav-links a:hover {
+    color: #375a9c;
+    box-shadow:
+      inset 2px 2px 6px #a3bce9,
+      inset -2px -2px 6px #d7e4ff;
+}
+
+.nav-links a.active {
+    background: #a6c8ff;
+    color: #1a3e72;
+    font-weight: 700;
+    box-shadow:
+      inset 4px 4px 8px #628de5,
+      inset -4px -4px 8px #c8e1ff;
+}
+
+.menu-bar {
+  position: relative;
+  display: inline-block; /* shrink-wrap content */
+  width: auto; /* no forced width */
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  font-size: 28px;
+  user-select: none;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: #eee;
+  border-radius: 6px;
+  position: relative;
+  z-index: 1100;
+}
+
+/* Small screen */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: inline-block;
+  }
+
+  #nav-links {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%; /* place immediately right of burger */
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 8px 12px;
+    white-space: nowrap;
+    z-index: 1090;
+  }
+
+  #nav-links.show {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  #nav-links .nav-text {
+    display: none;
+  }
+
+  #nav-links ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+
+  #nav-links li {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.dashboard {
+  padding: 10px 20px 40px 20px;
+  margin-top: 150px;
+}
+
+/* Heading */
+.neumorphic-heading {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  text-align: center;
+  text-shadow:
+    2px 2px 5px #a0b8d9,
+    -2px -2px 5px #f3f9ff;
+}
+
+/* === Stats Cards === */
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+  margin-top: 25px;
+}
+
+.card {
+  background: #dbe9f4;
+  border-radius: 22px;
+  padding: 30px 20px;
+  box-shadow:
+    8px 8px 15px #a0b8d9,
+    -8px -8px 15px #f3f9ff;
+  text-align: center;
+  cursor: default;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow:
+    inset 4px 4px 10px #a0b8d9,
+    inset -4px -4px 10px #f3f9ff;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #375a9c;
+}
+
+.card p {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a3e72;
+}
+
+/* === Sections === */
+.neumorphic-section {
+  background: #dbe9f4;
+  border-radius: 18px;
+  padding: 20px 25px;
+  box-shadow:
+    8px 8px 15px #a0b8d9,
+    -8px -8px 15px #f3f9ff;
+  margin-bottom: 30px;
+}
+
+.neumorphic-section h3 {
+  margin-bottom: 15px;
+  color: #375a9c;
+}
+
+/* Lists */
+.alerts-list,
+.activities-list {
+  list-style: none;
+  max-height: 180px;
+  overflow-y: auto;
+  padding-left: 12px;
+}
+
+.alerts-list li,
+.activities-list li {
+  padding: 8px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  background: #e2ebf9;
+  box-shadow:
+    inset 2px 2px 4px #a0b8d9,
+    inset -2px -2px 4px #f3f9ff;
+  font-size: 15px;
+  color: #2c3e50;
+}
+
+/* === Quick Actions === */
+.quick-actions .actions-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.neumorphic-button {
+  display: inline-block;
+  background: #dbe9f4;
+  color: #2c3e50;
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 18px;
+  box-shadow:
+    8px 8px 15px #a0b8d9,
+    -8px -8px 15px #f3f9ff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  user-select: none;
+  cursor: pointer;
+}
+
+.neumorphic-button:hover {
+  box-shadow:
+    inset 4px 4px 10px #a0b8d9,
+    inset -4px -4px 10px #f3f9ff;
+  color: #1a3e72;
+}
+
+/* === Search Form === */
+.neumorphic-search {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.neumorphic-search input[type="text"] {
+  padding: 10px 14px;
+  border-radius: 18px;
+  border: none;
+  box-shadow:
+    6px 6px 12px #a0b8d9,
+    -6px -6px 12px #f3f9ff;
+  width: 220px;
+  font-size: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+.neumorphic-search input[type="text"]:focus {
+  outline: none;
+  box-shadow:
+    inset 4px 4px 8px #a0b8d9,
+    inset -4px -4px 8px #f3f9ff;
+}
+
+.neumorphic-search button {
+  padding: 10px 16px;
+  border-radius: 18px;
+  border: none;
+  background: #dbe9f4;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow:
+    8px 8px 15px #a0b8d9,
+    -8px -8px 15px #f3f9ff;
+  transition: all 0.3s ease;
+}
+
+.neumorphic-search button:hover {
+  box-shadow:
+    inset 4px 4px 10px #a0b8d9,
+    inset -4px -4px 10px #f3f9ff;
+}
+
+/* Scrollbar for lists */
+.alerts-list::-webkit-scrollbar,
+.activities-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.alerts-list::-webkit-scrollbar-thumb,
+.activities-list::-webkit-scrollbar-thumb {
+  background-color: #a0b8d9;
+  border-radius: 20px;
+}
+
+.alerts-list::-webkit-scrollbar-track,
+.activities-list::-webkit-scrollbar-track {
+  background-color: #e3ecf8;
+}
+
+/* === Utility === */
+.text-center {
+  text-align: center;
+}

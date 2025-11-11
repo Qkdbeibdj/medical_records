@@ -1,0 +1,507 @@
+/* physician.css */
+
+/* Reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e0e5ec; /* Slightly darker background to enhance neumorphic effect */
+    color: #3e1760; /* deep purple as default */
+    overflow-x: hidden;
+}
+
+/* Apply deep purple to all text EXCEPT buttons, headers, and nav links */
+body *:not(.btn):not(header):not(header *):not(.nav-links a):not(.dropbtn) {
+    color: #3e1760 !important;
+}
+
+
+/* Neumorphic Header */
+header {
+    background: #e0e5ec; /* Soft background */
+    color: #333;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.15), -8px -8px 15px rgba(255, 255, 255, 0.7); /* Pure neumorphic shadow */
+    margin: 20px;
+}
+
+/* Logo Section */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 70px;
+    margin-right: 20px;
+    border-radius: 50%;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.15), -8px -8px 15px rgba(255, 255, 255, 0.7); /* Soft neumorphic shadow for logo */
+}
+
+/* College Info */
+.college-info h2, 
+.college-info h3, 
+.college-info p {
+    margin: 0;
+    color: #333;
+}
+
+.college-info h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.college-info h3 {
+    font-size: 16px;
+}
+
+.college-info p {
+    font-size: 12px;
+}
+
+/* Neumorphic Navigation Bar */
+.top-nav {
+    background: #e0e5ec; /* Soft background */
+    padding: 10px 0;
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.15), -8px -8px 15px rgba(255, 255, 255, 0.7); /* Neumorphic shadow */
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links ul li {
+    margin: 0 20px;
+}
+
+.nav-links ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+    color: #666;
+}
+
+.nav-links ul li a.active {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+    background: #e0e5ec; /* Light background for active state */
+    border-radius: 8px;
+    padding: 5px 10px;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2), inset -4px -4px 10px rgba(255, 255, 255, 0.1); /* Inset neumorphism effect */
+}
+
+/* Notification Badge and Dropdown */
+.nav-notification {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    position: relative;
+}
+
+.badge {
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 12px;
+    position: absolute;
+    top: -8px;
+    right: -10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: #e0e5ec; /* Soft background */
+    min-width: 200px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.15), -8px -8px 15px rgba(255, 255, 255, 0.7); /* Neumorphic shadow */
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/* Modal Styling for Neumorphism and Centering */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #e0e5ec;
+    border-radius: 16px;
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.5); /* Pure neumorphic shadow */
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Close button for the modal */
+.close-btn, .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #888;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Ensure the modal-dialog uses full width of modal */
+.modal-dialog {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Neumorphic modal content style */
+.modal-content.neumorphic {
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 10px 10px 30px #c8d0e7, -10px -10px 30px #ffffff;
+}
+
+/* Optional: for close button placement */
+.modal-header .btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.modal-content label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2), inset -4px -4px 10px rgba(255, 255, 255, 0.1); /* Inset neumorphism effect */
+}
+
+/* Adjust Submit Button */
+.modal-content input[type="submit"] {
+    background: #4b8db5;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.1); /* Neumorphic shadow */
+    margin-bottom: 20px; /* Ensure the button doesn't touch the bottom edge */
+}
+
+.modal-content input[type="submit"]:hover {
+    background: #006ea1;
+}
+
+/* Close Button */
+.close {
+    font-size: 28px;
+    color: #888;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* Main Content */
+.main-content {
+    padding: 20px;
+}
+
+.statistics h2,
+.recent-activity h2 {
+    margin-bottom: 20px;
+}
+
+.stats-box {
+    background: #e0e5ec;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.15), -8px -8px 15px rgba(255, 255, 255, 0.7); /* Neumorphic shadow */
+}
+
+.table {
+    width: 100%;
+    background: #e0e5ec;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.15),
+                -8px -8px 15px rgba(255, 255, 255, 0.7); /* Neumorphic shadow */
+}
+
+.table thead {
+    background: #d1d9e6;
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+    background: #e0e5ec;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.08),
+                inset -2px -2px 5px rgba(255, 255, 255, 0.7); /* Neumorphic inset */
+    border: none;
+}
+
+.table tr:nth-child(even) {
+    background: rgba(240, 240, 243, 0.8);
+}
+
+.table tr:hover {
+    background-color: #e9ecf1;
+    transition: background-color 0.3s ease;
+}
+
+/* Buttons */
+.btn-success {
+    background-color: #4b8db5;
+    color: white;
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15), -4px -4px 8px rgba(255, 255, 255, 0.7); /* Neumorphic shadow */
+}
+
+.btn-success:hover {
+    background-color: #006ea1;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+    .nav-links ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links ul li {
+        margin: 10px 0;
+    }
+    .main-content {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 50px;
+    }
+    .logo-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .college-info h2 {
+        font-size: 18px;
+    }
+    .college-info h3 {
+        font-size: 14px;
+    }
+    .college-info p {
+        font-size: 10px;
+    }
+}
+/* ===== Dashboard Content ===== */
+.dashboard-content {
+    margin: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 16px rgba(0, 0, 0, 0.1), inset -8px -8px 16px rgba(255, 255, 255, 0.4);
+}
+
+/* ===== Search Section ===== */
+.search-student {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+#searchStudent {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff;
+    transition: all 0.3s ease;
+}
+
+#searchStudent:focus {
+    outline: none;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.15), inset -2px -2px 5px rgba(255, 255, 255, 0.25);
+}
+
+/* ===== Button Style ===== */
+.btn {
+    padding: 10px 20px;
+    border-radius: 12px;
+    background: rgba(72, 219, 251, 0.5);
+    color: #2a3439;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: rgba(72, 219, 251, 0.7);
+    color: #000;
+}
+
+/* ===== Table Styles ===== */
+.students, .generated-certificates {
+    overflow-x: auto; /* Important to allow horizontal scroll */
+}
+
+.students table,
+.generated-certificates table {
+    min-width: 600px; /* Make table wide enough to scroll if needed */
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff;
+}
+
+.students th, .students td,
+.generated-certificates th, .generated-certificates td {
+    padding: 15px;
+    text-align: left;
+    color: #2a3439;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.students th, .generated-certificates th {
+    font-weight: bold;
+}
+.filter-buttons {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 10px;
+}
+
+.filter-buttons button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 12px;
+    background: #e0e0e0;
+    color: #333;
+    font-weight: 500;
+    box-shadow: 4px 4px 8px #bebebe, -4px -4px 8px #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.filter-buttons button:hover {
+    background-color: #d2d2d2;
+    transform: translateY(-1px);
+}
+
+/* Active button style */
+.filter-buttons button.active {
+    background-color: #9bd6a2;
+    color: #1e4620;
+    box-shadow: inset 4px 4px 6px #85b891, inset -4px -4px 6px #b9f4b3;
+    transform: scale(1.03);
+    font-weight: bold;
+}
+.toggle-btn {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.toggle-btn:hover {
+    text-decoration: none;
+}
+.detail-row {
+    background-color: #f9f9f9;
+}
+.detail-row td {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}

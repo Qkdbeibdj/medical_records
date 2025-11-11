@@ -1,0 +1,335 @@
+/* =====================================================
+   COLOR VARIABLES — Light & Dark Theme Support
+   ===================================================== */
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #3e1760;
+    --tile-bg: #ffffff;
+    --tile-shadow: rgba(0, 0, 0, 0.1);
+    --header-bg: #2c3e50;
+    --header-text: #ffffff;
+    --accent: #3498db;
+    --button-green: #27ae60;
+    --table-header-bg: #2c3e50;
+    --table-header-text: #ffffff;
+    --modal-bg: #ffffff;
+    --input-bg: #ffffff;
+    --input-border: #ccc;
+}
+
+body.dark-mode {
+    --bg-color: #1e1e2f;
+    --text-color: #f4f4f4;
+    --tile-bg: #2b2b3d;
+    --tile-shadow: rgba(255, 255, 255, 0.1);
+    --header-bg: #111827;
+    --header-text: #f4f4f4;
+    --accent: #4da3ff;
+    --button-green: #4caf50;
+    --table-header-bg: #111827;
+    --table-header-text: #f4f4f4;
+    --modal-bg: #2c2c3c;
+    --input-bg: #3a3a4d;
+    --input-border: #555;
+}
+
+/* =====================================================
+   GENERAL STYLES
+   ===================================================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+body *:not(.btn):not(header):not(header *):not(.nav-links a):not(.dropbtn) {
+    color: var(--text-color) !important;
+}
+
+.dashboard-container {
+    width: 90%;
+    margin: auto;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+header {
+    background: var(--header-bg);
+    color: var(--header-text);
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+.hamburger-menu-container {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+}
+
+.hamburger-menu {
+    font-size: 24px;
+    color: var(--header-text);
+}
+
+.menu-bar-container {
+    display: none;
+    background: #34495e;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.menu-bar-container.show {
+    display: block;
+}
+
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav-links ul li a {
+    color: var(--header-text);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* =====================================================
+   MAIN SECTIONS
+   ===================================================== */
+.welcome {
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-summary {
+    text-align: center;
+    padding: 10px;
+}
+
+.profile-summary img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+/* =====================================================
+   QUICK ACCESS TILES
+   ===================================================== */
+.tiles {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.tile {
+    background: var(--tile-bg);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--tile-shadow);
+    text-align: center;
+    width: 30%;
+    transition: 0.3s;
+}
+
+.tile:hover {
+    transform: translateY(-3px);
+}
+
+.tile a {
+    display: block;
+    margin-top: 10px;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* =====================================================
+   STUDENT LIST
+   ===================================================== */
+.students {
+    display: none;
+    background: var(--tile-bg);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--tile-shadow);
+}
+
+.students.show {
+    display: block;
+}
+
+.students table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.students th, .students td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.students th {
+    background: var(--table-header-bg);
+    color: var(--table-header-text);
+}
+
+/* =====================================================
+   MODAL
+   ===================================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--modal-bg);
+    margin: 10% auto;
+    padding: 20px;
+    width: 50%;
+    border-radius: 10px;
+    color: var(--text-color);
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* =====================================================
+   BUTTON STYLES
+   ===================================================== */
+.start-test-btn,
+.btn-primary,
+.btn-secondary,
+.btn-warning,
+.btn-success {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.start-test-btn {
+    background: var(--button-green);
+    color: white;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.btn-warning {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+.btn-success {
+    background-color: var(--button-green);
+    color: #fff;
+}
+
+.start-test-btn:hover,
+.btn-primary:hover,
+.btn-warning:hover,
+.btn-success:hover {
+    opacity: 0.9;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 768px) {
+    .tile {
+        width: 80%;
+        margin-bottom: 15px;
+    }
+    .modal-content {
+        width: 90%;
+    }
+}
+
+/* =====================================================
+   MESSAGES
+   ===================================================== */
+.success-message {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* =====================================================
+   SETTINGS
+   ===================================================== */
+.settings-container {
+    padding: 20px;
+}
+
+.settings-form {
+    background-color: var(--tile-bg);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.settings-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.settings-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+.settings-form input[type="submit"] {
+    background-color: var(--button-green);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.settings-form input[type="submit"]:hover {
+    opacity: 0.9;
+}

@@ -1,0 +1,752 @@
+/* Reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e0e5ec; /* Light grey background for pure neumorphism */
+    color: #3e1760; /* Default deep purple text */
+    overflow-x: hidden;
+}
+body *:not(.btn):not(header):not(header *):not(.nav-links a):not(.dropbtn) {
+    color: #3e1760 !important;
+}
+/* Neumorphism Dashboard Container */
+.dashboard-container {
+    max-width: 100%;
+    margin: auto;
+    padding: 20px;
+    color: #3e1760;
+}
+
+/* Header */
+header {
+    background: #e0e5ec;
+    border-radius: 16px;
+    padding: 15px 20px;
+    position: relative;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1),
+                -8px -8px 15px rgba(255, 255, 255, 0.5);
+    color: #3e1760;
+}
+
+/* Header Content */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #3e1760;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo styling */
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1),
+                -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* College Info Styling */
+.college-info h2 {
+    color: #3e1760;
+    font-size: 23px; /* Main title (College Name) */
+    font-weight: bold;
+}
+
+.college-info h3 {
+    color: #3e1760;
+    font-size: 20px; /* Subheading (Department) */
+    font-weight: 600;
+}
+
+.college-info p {
+    color: #3e1760;
+    font-size: 13px; /* Smaller details (Address, etc.) */
+}
+
+/* Welcome Section */
+.welcome h2 {
+    margin-top: 20px;
+    color: #3e1760;
+}
+
+/* Wrapper for header and top nav */
+.nav-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+    background: #e0e5ec;
+    border-radius: 16px;
+    padding: 10px 20px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1),
+                -8px -8px 15px rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.menu-bar-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    font-size: 28px;
+    color: #3e1760 !important;
+    cursor: pointer;
+    padding: 10px;
+    background: #e0e5ec;
+    border-radius: 12px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1),
+                -4px -4px 8px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu:hover {
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+.hamburger-menu i {
+    color: #3e1760 !important;
+}
+
+/* Navigation Links Container */
+.nav-links {
+    flex: 1;
+    display: block;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation Links */
+.nav-links a,
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #3e1760 !important;
+    padding: 12px 18px;
+    border-radius: 12px;
+    background: #e0e5ec;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1),
+                -4px -4px 8px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-link:hover {
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+    color: #007BFF !important;
+}
+
+.nav-links a i,
+.nav-link i {
+    font-size: 20px;
+    color: #3e1760 !important;
+}
+
+/* Button Styles in Navigation */
+.nav-links .btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1),
+                -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+.nav-links .btn:hover {
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+.nav-links .btn i {
+    font-size: 18px;
+}
+
+.nav-links .btn-primary {
+    background-color: #007bff;
+    color: white !important;
+}
+
+.nav-links .btn-danger {
+    background-color: #dc3545;
+    color: white !important;
+}
+
+.nav-links .btn-primary i,
+.nav-links .btn-danger i {
+    color: white !important;
+}
+
+/* Buttons with Neumorphism (general) */
+.btn-success, .btn-primary {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    background: #e0e5ec;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1),
+                -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+.btn-success {
+    background-color: #28a745;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-success:hover,
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        background: #e0e5ec;
+        border-radius: 16px;
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1),
+                    -8px -8px 15px rgba(255, 255, 255, 0.5);
+        z-index: 1000;
+        display: none;
+        padding: 15px;
+    }
+
+    .nav-links.active {
+        display: block;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a,
+    .nav-link {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .nav-links .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Very Small Screens - Icon Only with Tooltips */
+@media (max-width: 480px) {
+    .nav-text,
+    .nav-links .btn span {
+        display: none;
+    }
+
+    .nav-links a,
+    .nav-link {
+        justify-content: center;
+        padding: 12px;
+        position: relative;
+    }
+
+    .nav-links .btn {
+        padding: 12px;
+        justify-content: center;
+    }
+
+    /* Tooltip Styles */
+    .nav-links a[data-title]:hover::after,
+    .nav-link[data-title]:hover::after {
+        content: attr(data-title);
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(62, 23, 96, 0.95);
+        color: white !important;
+        padding: 8px 12px;
+        border-radius: 8px;
+        white-space: nowrap;
+        font-size: 14px;
+        z-index: 1001;
+        margin-left: 10px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+        animation: tooltipFadeIn 0.3s ease;
+    }
+
+    .nav-links a[data-title]:hover::before,
+    .nav-link[data-title]:hover::before {
+        content: "";
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 6px solid transparent;
+        border-right-color: rgba(62, 23, 96, 0.95);
+        margin-left: 4px;
+    }
+
+    .nav-links .btn[data-title]:hover::after {
+        content: attr(data-title);
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(62, 23, 96, 0.95);
+        color: white !important;
+        padding: 8px 12px;
+        border-radius: 8px;
+        white-space: nowrap;
+        font-size: 14px;
+        z-index: 1001;
+        margin-left: 10px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+        animation: tooltipFadeIn 0.3s ease;
+    }
+
+    .nav-links .btn[data-title]:hover::before {
+        content: "";
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 6px solid transparent;
+        border-right-color: rgba(62, 23, 96, 0.95);
+        margin-left: 4px;
+    }
+}
+
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) translateX(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+/* Modal Styling */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #e0e5ec;
+    border-radius: 16px;
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1),
+                -8px -8px 15px rgba(255, 255, 255, 0.5);
+    max-height: 90vh;
+    overflow-y: auto;
+    color: #3e1760;
+}
+
+/* Close button for the modal */
+.close-btn, .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #3e1760;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Table with Neumorphism */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #e0e5ec;
+    border-radius: 12px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1),
+                -8px -8px 15px rgba(255, 255, 255, 0.5);
+    color: #3e1760;
+}
+
+/* Table Header Styling */
+table thead {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+/* Table Styling */
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    background: #e0e5ec;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+    color: #3e1760;
+}
+
+/* Active Table Row */
+table tr:hover {
+    background: #f0f0f5;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Neumorphism on Forms */
+form input, form select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: none;
+    background: #e0e5ec;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 10px rgba(255, 255, 255, 0.5);
+    color: #3e1760;
+}
+
+form .add-student-btn {
+    margin-top: 15px;
+    width: 100%;
+    background-color: #28a745;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 10px rgba(255, 255, 255, 0.5);
+    color: white;
+}
+
+form .add-student-btn:hover {
+    background-color: #218838;
+}
+
+/* Modal Input Fields */
+.modal-content input, 
+.modal-content select, 
+.modal-content textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 12px;
+    border: none;
+    background: #e0e5ec;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    color: #3e1760;
+}
+
+/* Modal Buttons */
+.modal-content button, 
+.modal-content input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1),
+                -4px -4px 8px rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+}
+
+/* Modal Button Hover */
+.modal-content button:hover,
+.modal-content input[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+/* Modal Close Button */
+.modal-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #3e1760;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Course Summary */
+.course-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.course-card {
+    flex: 1 1 48%;
+    background: #e0e5ec;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1),
+                -8px -8px 15px rgba(255, 255, 255, 0.5);
+    color: #3e1760;
+}
+
+.course-card h2 {
+    margin-top: 0;
+    color: #3e1760;
+}
+
+.course-card button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: none;
+    background: #00b894;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1),
+                -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+.course-card button:hover {
+    background-color: #019874;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Details Table */
+.details-table {
+    margin-top: 15px;
+    overflow-x: auto;
+}
+
+.details-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.details-table th, 
+.details-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    color: #3e1760;
+}
+
+/* Evaluate Button */
+.evaluateBtn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1),
+                -4px -4px 8px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.evaluateBtn:hover {
+    background: #0056b3;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.pagination button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    background: #e0e5ec;
+    color: #3e1760;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1),
+                -4px -4px 8px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.pagination button:hover {
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+/* Force Add Student + Manage Deactivated to match all nav buttons */
+.nav-links a.btn-primary,
+.nav-links a.btn-danger,
+.nav-links .btn-primary,
+.nav-links .btn-danger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* spacing between icon and text, from old code */
+
+    background-color: #eee6f7 !important; /* unified button color */
+    color: #3e1760 !important;
+    text-decoration: none;
+    font-weight: 600;
+
+    padding: 14px 0 !important; /* vertical padding */
+    width: 100% !important; /* make full width like other nav buttons */
+    border-radius: 16px !important;
+    border: none !important;
+
+    box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.08),
+                -6px -6px 14px rgba(255, 255, 255, 0.8) !important;
+
+    transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+/* Hover effect (neumorphic press effect) */
+.nav-links a.btn-primary:hover,
+.nav-links a.btn-danger:hover {
+    background-color: #d1bee8 !important;
+    transform: translateY(-3px);
+    box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.10),
+                -8px -8px 18px rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Icon color inside buttons */
+.nav-links a.btn-primary i,
+.nav-links a.btn-danger i,
+.nav-links .btn-primary i,
+.nav-links .btn-danger i {
+    color: #3e1760 !important;
+}
+
+/* Container for nav buttons */
+.top-nav .nav-links ul {
+    display: flex;
+    justify-content: space-between; /* distribute space evenly */
+    gap: 14px; /* space between buttons */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Each button fills equal space */
+.top-nav .nav-links ul li {
+    list-style: none;
+    flex: 1; /* ensures equal width for all buttons */
+}
+
+/* Force Add Student + Manage Deactivated + all nav buttons to have same style */
+.nav-links a.btn-primary,
+.nav-links a.btn-danger,
+.nav-links .btn-primary,
+.nav-links .btn-danger,
+.top-nav .nav-links ul li a,
+.top-nav .nav-links ul li button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* spacing between icon and text inside button */
+
+    background-color: #eee6f7 !important;
+    color: #3e1760 !important;
+    text-decoration: none;
+    font-weight: 600;
+
+    padding: 14px 0 !important;
+    width: 100%; /* full width of li */
+    border-radius: 16px !important;
+    border: none !important;
+
+    box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.08),
+                -6px -6px 14px rgba(255, 255, 255, 0.8) !important;
+
+    transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+/* Hover effect */
+.nav-links a.btn-primary:hover,
+.nav-links a.btn-danger:hover,
+.top-nav .nav-links ul li a:hover,
+.top-nav .nav-links ul li button:hover {
+    background-color: #d1bee8 !important;
+    transform: translateY(-3px);
+    box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.10),
+                -8px -8px 18px rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Icon color inside buttons */
+.nav-links i,
+.top-nav .nav-links i {
+    color: #3e1760 !important;
+}

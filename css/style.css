@@ -1,0 +1,179 @@
+/* Body styling */
+body {
+    background-image: url('../images/logo/yo.jpg'); /* Path to your image */
+    background-size: cover;  /* Cover the entire screen */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Make the background fixed */
+    background-repeat: no-repeat; /* Prevent repeating */
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #3e1760;
+}
+body *:not(.btn):not(header):not(header *):not(.nav-links a):not(.dropbtn) {
+    color: #3e1760 !important;
+}
+
+/* Login Container */
+.login-container {
+    width: 400px;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent for neumorphism effect */
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.4); /* Neumorphic shadow */
+    text-align: center; /* Center content inside */
+    backdrop-filter: blur(15px); /* Applying blur for neumorphism */
+}
+
+/* Logo */
+.logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto 15px; /* Center logo and add spacing */
+    border-radius: 50%;
+    box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.1), inset -4px -4px 6px rgba(255, 255, 255, 0.3); /* Neumorphic effect for the logo */
+}
+
+/* Heading */
+h2 {
+    font-size: 22px;
+    color: #4b0082;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2); /* Soft shadow for neumorphism */
+}
+
+/* Form Container */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Form labels */
+label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Input Fields */
+input {
+    width: calc(100% - 20px); /* Ensures input fits well */
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 12px; /* Rounded borders for neumorphism */
+    border: none;
+    background: rgba(255, 255, 255, 0.3); /* Soft, frosted glass effect */
+    box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.2), inset -4px -4px 6px rgba(255, 255, 255, 0.3); /* Neumorphic effect */
+    font-size: 14px;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4b0082;
+    color: white;
+    border: none;
+    border-radius: 12px; /* Rounded button edges */
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2), -4px -4px 6px rgba(255, 255, 255, 0.3); /* Neumorphic button shadow */
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3a0066;
+}
+
+/* Error Message */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Light shadow for text */
+}
+.role-buttons {
+    margin-bottom: 20px;
+}
+
+.role-buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #f0f0f3;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1),
+                -4px -4px 8px rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.role-buttons button:hover {
+    background-color: #e0e0eb;
+}
+.role-selection {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.role-card {
+    width: 180px;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4b0082;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1),
+                -8px -8px 15px rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.role-card:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2),
+                -4px -4px 12px rgba(255, 255, 255, 0.5);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.hidden {
+    display: none;
+}
+
+.close-btn {
+    margin-top: 10px;
+    background: #ccc;
+    border: none;
+    border-radius: 10px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #eee;
+    box-shadow: inset 2px 2px 4px #ccc, inset -2px -2px 4px #fff;
+}

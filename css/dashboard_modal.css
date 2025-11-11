@@ -1,0 +1,113 @@
+/* === UNIVERSAL MODAL STYLE (Dashboard + Homepage) === */
+.modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(10, 42, 94, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background: #dbe9f4;
+    border-radius: 20px;
+    padding: 30px 28px 28px;
+    width: 450px;
+    max-width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow:
+      8px 8px 20px #a0b8d9,
+      -8px -8px 20px #f3f9ff;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -45%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.modal-content h2,
+.modal-content label {
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.modal-content input[type="password"],
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 14px;
+    background: #c8def8;
+    box-shadow:
+      inset 4px 4px 8px #a3bce9,
+      inset -4px -4px 8px #d7e4ff;
+    font-size: 16px;
+    color: #1a3e72;
+    transition: box-shadow 0.3s ease;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+    outline: none;
+    box-shadow:
+      inset 2px 2px 5px #3761a8,
+      inset -2px -2px 5px #a3c1ff;
+}
+
+.modal-content input[type="submit"] {
+    background: #5a8bd6;
+    color: white;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow:
+      5px 5px 12px #436aa8,
+      -5px -5px 12px #7da8e6;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-content input[type="submit"]:hover {
+    background: #3c6fc1;
+    box-shadow:
+      inset 4px 4px 8px #2a5180,
+      inset -4px -4px 8px #5a82c5;
+}
+
+.close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 26px;
+    color: #375a9c;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.close:hover {
+    color: #1a3e72;
+}
+
+/* Message styling */
+.modal-content span[style*="color:red"] {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+.modal-content span[style*="color:green"] {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
